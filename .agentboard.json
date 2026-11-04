@@ -1,0 +1,60 @@
+{
+  "repo": "OWNER/REPO",
+  "issue": 0,
+  "base_ref": "main",
+  "users": {
+    "YOUR_GITHUB_LOGIN": [
+      "human",
+      "frontend",
+      "backend",
+      "ai",
+      "integration"
+    ]
+  },
+  "roles": {
+    "frontend": {
+      "paths": [
+        "frontend/"
+      ],
+      "branch": "agent/frontend",
+      "worktree": "../agentboard-wt/frontend",
+      "test_command": ""
+    },
+    "backend": {
+      "paths": [
+        "backend/"
+      ],
+      "branch": "agent/backend",
+      "worktree": "../agentboard-wt/backend",
+      "test_command": ""
+    },
+    "ai": {
+      "paths": [
+        "ai/"
+      ],
+      "branch": "agent/ai",
+      "worktree": "../agentboard-wt/ai",
+      "test_command": ""
+    },
+    "integration": {
+      "paths": [
+        "integration/"
+      ],
+      "branch": "agent/integration",
+      "worktree": "../agentboard-wt/integration",
+      "test_command": ""
+    }
+  },
+  "claude": {
+    "bin": "claude",
+    "model": "sonnet",
+    "default_tier": "standard",
+    "timeout_seconds": 900,
+    "extra_allowed_tools": []
+  },
+  "budget": {
+    "daily_usd": 20.0,
+    "max_parallel_local": 2
+  },
+  "interval": 60
+}
