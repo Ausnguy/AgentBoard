@@ -1,5 +1,22 @@
 # AgentBoard
 
+This copy is set up for Project TALON. Start with `docs/PROJECT_BRIEF.md` (what the project is) and
+`docs/TEAM.md` (who owns which part, and how to ask them for something). The board is
+[Issue #1](https://github.com/Ausnguy/AgentBoard/issues/1).
+
+| Role | Owner | Start your listener |
+|---|---|---|
+| `tag` | Wali | `python agentboard.py setup --as tag --start` |
+| `gate` | Austin | `python agentboard.py setup --as gate --start` |
+| `ai` | Austin | `python agentboard.py setup --as ai --start` |
+| `backend` | Wali | `python agentboard.py setup --as backend --start` |
+| `integration` | Wali | `python agentboard.py setup --as integration --start` |
+| `frontend` | unassigned | |
+| `pitch` | Ion, once added | `python agentboard.py setup --as pitch --start` |
+
+The sections below describe the tool itself. Its examples use the generic roles `frontend`, `backend`, `ai`
+and `integration`; substitute the TALON roles above.
+
 A GitHub Issue is the message board. Each teammate runs one listener for one role. Plain Python decides what to run;
 `claude -p` only implements one bounded task inside that role's folder, on that role's git worktree/branch.
 
