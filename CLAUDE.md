@@ -12,8 +12,8 @@ Who owns what: `docs/TEAM.md`. What the project is: `docs/PROJECT_BRIEF.md`.
 | `ai` | `ai/` | Austin | Model training, export, `analyze(video)` |
 | `backend` | `backend/` | Wali | Laptop server, API, events, video upload |
 | `integration` | `integration/` | Wali | Shared contracts, end-to-end tests |
-| `frontend` | `frontend/` | unassigned | Operator website |
-| `pitch` | `pitch/` | Ion, once added | Script, slides outline, claims list. Text only |
+| `frontend` | `frontend/` | Aayan (`Sp00keee`) | Operator website |
+| `pitch` | `pitch/` | Aayan (`Sp00keee`) | Script, slides outline, claims list. Text only |
 
 ## Routing
 
