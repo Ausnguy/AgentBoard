@@ -560,7 +560,13 @@ class CliTests(Base):
         self.assertEqual(self.run_cli("status")[0], 0)
         self.assertEqual(self.run_cli("status", "--json")[1].strip(), "{}")
         self.assertEqual(self.run_cli("retry", "--as", "backend", "nope0001")[0], 2)
-        self.assertEqual(self.run_cli("listen", "--as", "backend", "--once")[0], 2)  # placeholder users -> clear config error
+        cfgp = self.tmp / ".agentboard.json"
+        raw = json.loads(cfgp.read_text(encoding="utf-8"))
+        raw["users"] = {"YOUR_GITHUB_LOGIN": ["human", "backend"]}
+        cfgp.write_text(json.dumps(raw), encoding="utf-8")
+        code, _, err = self.run_cli("listen", "--as", "backend", "--once")
+        self.assertEqual(code, 2)  # placeholder users -> clear config error, before any gh/claude call
+        self.assertIn("YOUR_GITHUB_LOGIN", err)
         with self.assertRaises(ab.ConfigError):
             ab.ClaudeRunner(self.cfg, "backend", which=lambda b: None)._bin() if False else self._raise()
 

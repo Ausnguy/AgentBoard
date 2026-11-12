@@ -203,7 +203,7 @@ def validate_config(cfg, live=False):
             raise ConfigError("set 'repo' to your real OWNER/REPO in .agentboard.json")
         if not isinstance(cfg.get("issue"), int) or cfg["issue"] <= 0:
             raise ConfigError("set 'issue' to the real Issue number in .agentboard.json")
-        if "YOUR_GITHUB_LOGIN" in cfg["users"]:
+        if "your_github_login" in cfg["users"]:  # load_config lowercases user keys
             raise ConfigError("replace YOUR_GITHUB_LOGIN in 'users' with real GitHub logins")
 
 
