@@ -1,31 +1,35 @@
 {
-  "repo": "OWNER/REPO",
-  "issue": 0,
+  "repo": "Ausnguy/AgentBoard",
+  "issue": 1,
   "base_ref": "main",
   "users": {
-    "YOUR_GITHUB_LOGIN": [
+    "Ausnguy": [
       "human",
-      "frontend",
+      "gate",
+      "ai"
+    ],
+    "YatoVoid": [
+      "human",
+      "tag",
       "backend",
-      "ai",
       "integration"
     ]
   },
   "roles": {
-    "frontend": {
+    "tag": {
       "paths": [
-        "frontend/"
+        "tag/"
       ],
-      "branch": "agent/frontend",
-      "worktree": "../agentboard-wt/frontend",
+      "branch": "agent/tag",
+      "worktree": "../agentboard-wt/tag",
       "test_command": ""
     },
-    "backend": {
+    "gate": {
       "paths": [
-        "backend/"
+        "gate/"
       ],
-      "branch": "agent/backend",
-      "worktree": "../agentboard-wt/backend",
+      "branch": "agent/gate",
+      "worktree": "../agentboard-wt/gate",
       "test_command": ""
     },
     "ai": {
@@ -36,12 +40,36 @@
       "worktree": "../agentboard-wt/ai",
       "test_command": ""
     },
+    "backend": {
+      "paths": [
+        "backend/"
+      ],
+      "branch": "agent/backend",
+      "worktree": "../agentboard-wt/backend",
+      "test_command": ""
+    },
+    "frontend": {
+      "paths": [
+        "frontend/"
+      ],
+      "branch": "agent/frontend",
+      "worktree": "../agentboard-wt/frontend",
+      "test_command": ""
+    },
     "integration": {
       "paths": [
         "integration/"
       ],
       "branch": "agent/integration",
       "worktree": "../agentboard-wt/integration",
+      "test_command": ""
+    },
+    "pitch": {
+      "paths": [
+        "pitch/"
+      ],
+      "branch": "agent/pitch",
+      "worktree": "../agentboard-wt/pitch",
       "test_command": ""
     }
   },
