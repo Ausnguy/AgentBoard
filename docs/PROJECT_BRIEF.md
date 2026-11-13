@@ -36,8 +36,8 @@ The long-term goal is inspections on a schedule with nobody on site.
 | Dock gate | A motor, driven by another ESP32, that opens and closes the dock. 3D-printed parts | Austin |
 | Server | A program on a laptop that takes the Start command, tracks the mission, and receives the video | Wali |
 | Defect model | The AI that finds faults in the video | Austin |
-| Website | What the manager and the reviewer see | not assigned yet |
-| Pitch | The presentation and demo narration | Ion |
+| Website | What the manager and the reviewer see | Aayan |
+| Pitch | The presentation and demo narration | Aayan |
 
 ## Words you will hear
 

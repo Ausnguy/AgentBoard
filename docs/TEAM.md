@@ -15,7 +15,7 @@ model. `docs/PROJECT_BRIEF.md` explains it without jargon.
 | Austin | `Ausnguy` | Gate motor + its ESP32, defect model training, 3D-printed parts. Maintainer of this repo and the board | Wiring the gate motor to an ESP32. Training the model. Printing parts |
 | Wali | `YatoVoid` | The ESP32 + relay that rides on the drone. Laptop server, upload, protocol, end-to-end tests | Hooking up the relay and ESP32 for the drone |
 | Sakina | not added yet | Not decided | Still choosing a part. See "Open work" below |
-| Ion | not added yet | The pitch: presentation, script, demo narration | Joins later. Start with `docs/PROJECT_BRIEF.md` |
+| Aayan | `Sp00keee` | The operator website and the pitch: presentation, script, demo narration | Starting on the website (`frontend/`) and the pitch (`pitch/`). Start with `docs/PROJECT_BRIEF.md` |
 
 ## Roles on the board
 
@@ -30,23 +30,23 @@ machine. No listener running means the task waits.
 | `ai` | `ai/` | Austin | Training code, model export, the `analyze(video)` function the server calls |
 | `backend` | `backend/` | Wali | Laptop server: control API, event stream, video upload with SHA-256 check |
 | `integration` | `integration/` | Wali | Shared contracts (radio frames, API), end-to-end and fault tests |
-| `frontend` | `frontend/` | nobody yet | Operator website: Start button, live state, review of findings |
-| `pitch` | `pitch/` | Ion, once added | Script, slide outline, claims list, demo run order. Text only |
+| `frontend` | `frontend/` | Aayan | Operator website: Start button, live state, review of findings |
+| `pitch` | `pitch/` | Aayan | Script, slide outline, claims list, demo run order. Text only |
 | `human` | none | every person | Anything a person has to do or decide. Never runs a worker |
 
 3D printing has no role. It is physical work; ask Austin with a `human` request.
 
-### Adding Sakina and Ion
+### Adding Sakina
 
-Austin runs, once he has their GitHub logins:
+Aayan (`Sp00keee`) is already in `.agentboard.json` with `human,frontend,pitch`.
+Austin runs this once he has Sakina's GitHub login:
 
 ```powershell
-python agentboard.py team add <sakina-login> --roles human,frontend
-python agentboard.py team add <ion-login> --roles human,pitch
+python agentboard.py team add <sakina-login> --roles human
 git add .agentboard.json; git commit -m "add teammates"; git push
 ```
 
-`frontend` for Sakina is only a suggestion. Give her whichever role she picks.
+Give her whichever role she picks. `frontend` and `pitch` are Aayan's for now.
 
 ## Where the pieces meet
 
@@ -60,7 +60,7 @@ board before either side builds against it, then keep the file in
 | `gate` and `backend` | How the laptop tells the gate to open and close, and how the gate reports limit switches, dock sensor and faults | **Open.** Depends on whether the gate ESP32 talks to the laptop over USB serial or Wi-Fi |
 | `backend` and `frontend` | HTTP API and event stream | Drafted by Wali: start, return, emergency stop, reset, state, live events |
 | `backend` and `ai` | `analyze(video_path)` returns a status and a list of findings | Drafted by Wali. Until the model exists the server reports "model not ready" and zero findings |
-| everyone and `pitch` | What may be claimed on stage | See "What is real" in `docs/PROJECT_BRIEF.md`. Ion asks the owner before adding a claim |
+| everyone and `pitch` | What may be claimed on stage | See "What is real" in `docs/PROJECT_BRIEF.md`. Aayan asks the owner before adding a claim |
 
 ## Current state, honestly
 
@@ -121,11 +121,11 @@ python agentboard.py setup --as <your role> --start
 One listener per role. If you own two roles, run two terminals.
 `python agentboard.py status --as <role>` shows what is queued or blocked.
 
-## Open work nobody owns
+## Open work
 
-Good places for Sakina to start, in rough order of how much they unblock:
+Good places for Sakina to start, in rough order of how much they unblock. Aayan owns 1 and shares 3 and 4:
 
-1. Operator website (`frontend`): the Start button, the live mission state,
+1. Operator website (`frontend`, Aayan): the Start button, the live mission state,
    and the screen where a person accepts or rejects each finding.
 2. Review and ticket flow: what a repair ticket contains, what happens to a
    rejected finding.
@@ -143,5 +143,5 @@ Good places for Sakina to start, in rough order of how much they unblock:
 | Is there a physical emergency stop that cuts motor power by itself? | Austin |
 | Where does the model run, and how long does one video take? | Austin |
 | Which part does Sakina take? | Sakina |
-| GitHub logins for Sakina and Ion | Sakina, Ion |
+| GitHub login for Sakina | Sakina |
 | Where does Wali's existing code go: this repo's `backend/` and `integration/`, or its own repo? | Wali and Austin |

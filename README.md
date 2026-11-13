@@ -11,8 +11,8 @@ This copy is set up for Project TALON. Start with `docs/PROJECT_BRIEF.md` (what 
 | `ai` | Austin | `python agentboard.py setup --as ai --start` |
 | `backend` | Wali | `python agentboard.py setup --as backend --start` |
 | `integration` | Wali | `python agentboard.py setup --as integration --start` |
-| `frontend` | unassigned | |
-| `pitch` | Ion, once added | `python agentboard.py setup --as pitch --start` |
+| `frontend` | Aayan | `python agentboard.py setup --as frontend --start` |
+| `pitch` | Aayan | `python agentboard.py setup --as pitch --start` |
 
 The sections below describe the tool itself. Its examples use the generic roles `frontend`, `backend`, `ai`
 and `integration`; substitute the TALON roles above.
